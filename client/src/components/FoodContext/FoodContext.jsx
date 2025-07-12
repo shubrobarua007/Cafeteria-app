@@ -543,11 +543,12 @@ export const FoodProvider = ({ children }) => {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   
     const whatsappURL = isMobile
-      ? `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`
-      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+      ? `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`  // App link for mobile
+      : `https://wa.me/${phoneNumber}?text=${encodedMessage}`;         // Web link for desktop
   
     window.open(whatsappURL, "_blank");
   };
+  
   
 
   return (
