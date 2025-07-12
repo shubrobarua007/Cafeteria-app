@@ -1,0 +1,70 @@
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px; /* Increased vertical padding */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    flex-direction: column;
+    background: #fff; /* Ensure white background */
+    min-height: 60vh; /* Minimum height to prevent crowding */
+}
+
+.contact-container h1 {
+    color: #ff914d;
+    margin: 40px 0; /* Consolidated margins */
+    font-size: 2.5rem; /* Larger heading */
+    text-align: center;
+}
+
+.address-info {
+    display: flex;
+    align-items: center; /* Better for multi-line content */
+    justify-content: center;
+    flex-direction: column; /* Horizontal layout by default */
+    gap: 60px; /* Increased gap */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    max-width: 1200px; /* Prevent over-stretching */
+    width: 100%;
+}
+
+.address-info section {
+    flex: 1; /* Flexible sections */
+    min-width: 250px; /* Minimum width before wrapping */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.address-info section:hover {
+    transform: translateY(-5px); /* Subtle hover lift */
+}
+
+.address-info h3 {
+    color: #ff914d;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.address-info p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .address-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .address-info section {
+        min-width: 100%;
+    }
+    
+    .contact-container h1 {
+        font-size: 2rem;
+        margin: 30px 0;
+    }
+}

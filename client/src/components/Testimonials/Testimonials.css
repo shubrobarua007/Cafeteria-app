@@ -1,0 +1,41 @@
+.test-container {
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.test-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.test-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.test-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ff914d;
+}
+
+.test-card blockquote {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* If you add images */
+.test-avatar {
+    width: 80px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 3px solid #ff914d;
+}

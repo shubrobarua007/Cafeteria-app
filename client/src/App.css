@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    padding: 0.5rem 10rem;
+    overflow: hidden;
+    color: black;
+}
+/* In App.css */
+html {
+    scroll-behavior: smooth;
+  }
+
