@@ -13,7 +13,7 @@
 }
 
 .home-content {
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for contrast */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 1.5rem;
   border-radius: 12px;
   max-width: 700px;

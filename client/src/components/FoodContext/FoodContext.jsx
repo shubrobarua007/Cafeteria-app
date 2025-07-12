@@ -515,7 +515,7 @@ export const FoodProvider = ({ children }) => {
     const fullName = `${firstName} ${lastName}`;
     const address = `Area: ${area}, Building Number: ${building}, Flat Number: ${flat}`;
     const total = getTotalCartAmount();
-
+  
     const itemLines = Object.entries(cartItem)
       .filter(([id, quantity]) => quantity > 0)
       .map(([id, quantity]) => {
@@ -528,7 +528,7 @@ export const FoodProvider = ({ children }) => {
       })
       .filter(Boolean)
       .join("\n");
-
+  
     const message =
       `Hello,\n` +
       `My name is ${fullName}.\n` +
@@ -537,14 +537,18 @@ export const FoodProvider = ({ children }) => {
       `Total: ${total.toFixed(2)} AED\n\n` +
       `Delivery Address:\n${address}\n` +
       `Phone: ${phone}`;
-
+  
     const phoneNumber = "971506548665";
-    const url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
-      message
-    )}`;
-
-    window.open(url, "_blank");
+    const encodedMessage = encodeURIComponent(message);
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  
+    const whatsappURL = isMobile
+      ? `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+  
+    window.open(whatsappURL, "_blank");
   };
+  
 
   return (
     <FoodContext.Provider
