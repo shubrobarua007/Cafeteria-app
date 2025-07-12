@@ -1,68 +1,107 @@
 .home-container {
-  height: 35vw;
-  margin: 30px auto;
-  background: url("/images/header-img.png") no-repeat;
-  background-size: contain;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: url("/images/header-img.png") no-repeat center center;
+  background-size: cover;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .home-content {
-  position: absolute;
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  gap: 1.5vw;
-  max-width: 50%;
-  bottom: 20%;
-  left: 6vw;
-  animation: fadeIn 1.5s;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for contrast */
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
 }
 
 .home-content h1 {
   color: #ff914d;
-  font-size: max(4.5vw, 22px);
-  font-weight: 600;
-}
-.home-content p {
-  color: white;
-  font-size: 2vw;
-  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.btn {
-  padding: 1rem 5rem;
-  font-size: 16px;
-  color: white;
-  border: 2px solid #ff914d;
-  border-radius: 8px;
-  background-color: #ff914d;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.home-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
 }
+
+/* Button (if used later) */
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border: none;
+  background-color: #ff914d;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
 .btn:hover {
   background-color: white;
   color: #ff914d;
 }
 
-@media (max-width: 1050px) {
-  .home-container {
-    height: 25vw;
-  }
+/* 🔧 RESPONSIVE BREAKPOINTS */
+
+/* Tablet and small desktop */
+@media (max-width: 768px) {
   .home-content {
-    max-width: 45%;
+    padding: 1.25rem;
+  }
+
+  .home-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .home-content p {
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 750px) {
+/* Mobile (fixes breaking at 600px and below) */
+@media (max-width: 600px) {
+  .home-container {
+    padding: 1rem;
+  }
+
   .home-content {
-    max-width: 65%;
-    top: 2%;
-    left: 12%;
+    padding: 1rem;
   }
-  .home-container p {
-    font-size: 11px;
+
+  .home-content h1 {
+    font-size: 1.5rem;
   }
+
+  .home-content p {
+    font-size: 0.9rem;
+  }
+
   .btn {
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Extra small mobile (iPhone SE etc) */
+@media (max-width: 400px) {
+  .home-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .home-content p {
+    font-size: 0.85rem;
   }
 }

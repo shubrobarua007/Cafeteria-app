@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .main{
-    padding: 0.5rem 10rem;
+    padding: 0.5rem 2rem;
     overflow: hidden;
     color: black;
 }
@@ -13,3 +13,9 @@ html {
     scroll-behavior: smooth;
   }
 
+  @media (max-width: 600px) {
+    .main {
+      padding: 0.5rem 1rem;
+    }
+  }
+  
