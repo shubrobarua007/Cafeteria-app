@@ -512,6 +512,11 @@ export const FoodProvider = ({ children }) => {
   };
   const allMenuItems = getAllMenuItems();
   const handleWhatsAppOrder = () => {
+    if(!firstName || !lastName || !phone){
+      alert("Please provide information")
+      return null;
+    }
+  
     const fullName = `${firstName} ${lastName}`;
     const address = `Area: ${area}, Building Number: ${building}, Flat Number: ${flat}`;
     const total = getTotalCartAmount();
@@ -538,7 +543,7 @@ export const FoodProvider = ({ children }) => {
       `Delivery Address:\n${address}\n` +
       `Phone: ${phone}`;
   
-    const phoneNumber = "971506548665";
+    const phoneNumber = "9710565353448";
     const encodedMessage = encodeURIComponent(message);
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   
